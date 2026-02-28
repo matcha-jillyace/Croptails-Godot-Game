@@ -1,11 +1,14 @@
-# Godot cache and temporary files
+# Godot temporary/cache files
 .godot/
 *.import
+*.import/
 *.md5
 *.ctex
-*.d3d12.cache
-.godot/uid_cache.bin
 
 # OS files
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# Exported builds
+/export/
