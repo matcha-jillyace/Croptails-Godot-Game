@@ -1,12 +1,13 @@
 [gd_resource type="TileSet" format=3 uid="uid://dfcc4lwte76u"]
 
-[ext_resource type="Texture2D" uid="uid://bxwujs4spfr4u" path="res://assets/game/tilesets/water.png" id="1_wj2rd"]
-[ext_resource type="Texture2D" uid="uid://xbyl3yxhfox4" path="res://assets/game/tilesets/grass.png" id="2_r3ft6"]
-[ext_resource type="Texture2D" uid="uid://b6fk70ff8bv1p" path="res://assets/game/tilesets/tilled_dirt_wide.png" id="3_cgjhy"]
-[ext_resource type="Texture2D" uid="uid://bfgyyax1kcgff" path="res://assets/game/objects/basic_grass_biom_things.png" id="4_wyahh"]
+[ext_resource type="Texture2D" uid="uid://bxwujs4spfr4u" path="res://Tilesets/tilesets/water.png" id="1_q44yv"]
+[ext_resource type="Texture2D" uid="uid://xbyl3yxhfox4" path="res://Tilesets/tilesets/grass.png" id="2_6adwn"]
+[ext_resource type="Texture2D" uid="uid://b6fk70ff8bv1p" path="res://Tilesets/tilesets/tilled_dirt_wide.png" id="3_g122b"]
+[ext_resource type="Texture2D" uid="uid://bfgyyax1kcgff" path="res://assets/game/objects/basic_grass_biom_things.png" id="4_kni86"]
+[ext_resource type="PackedScene" uid="uid://dbbthp3ec1lx2" path="res://scenes/houses/large_house.tscn" id="5_m3v6h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r3ft6"]
-texture = ExtResource("1_wj2rd")
+texture = ExtResource("1_q44yv")
 0:0/animation_columns = 4
 0:0/animation_frame_0/duration = 0.2
 0:0/animation_frame_1/duration = 0.2
@@ -15,7 +16,7 @@ texture = ExtResource("1_wj2rd")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cgjhy"]
-texture = ExtResource("2_r3ft6")
+texture = ExtResource("2_6adwn")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
@@ -227,7 +228,7 @@ texture = ExtResource("2_r3ft6")
 4:3/0/terrains_peering_bit/top_side = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wyahh"]
-texture = ExtResource("3_cgjhy")
+texture = ExtResource("3_g122b")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -262,7 +263,7 @@ texture = ExtResource("3_cgjhy")
 1:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kvivr"]
-texture = ExtResource("4_wyahh")
+texture = ExtResource("4_kni86")
 5:0/0 = 0
 6:0/0 = 0
 7:0/0 = 0
@@ -293,6 +294,9 @@ texture = ExtResource("4_wyahh")
 1:0/0 = 0
 1:2/0 = 0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_0870b"]
+scenes/1/scene = ExtResource("5_m3v6h")
+
 [resource]
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Grass Terrain "
@@ -301,3 +305,4 @@ sources/0 = SubResource("TileSetAtlasSource_r3ft6")
 sources/1 = SubResource("TileSetAtlasSource_cgjhy")
 sources/2 = SubResource("TileSetAtlasSource_wyahh")
 sources/3 = SubResource("TileSetAtlasSource_kvivr")
+sources/4 = SubResource("TileSetScenesCollectionSource_0870b")
