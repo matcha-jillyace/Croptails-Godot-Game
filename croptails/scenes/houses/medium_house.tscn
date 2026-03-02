@@ -1,10 +1,12 @@
-[gd_resource type="TileSet" format=3 uid="uid://c8pt53o65xkq7"]
+[gd_scene format=4 uid="uid://dbvin55rkpau8"]
 
-[ext_resource type="Texture2D" uid="uid://b4kvbe11qywoc" path="res://Tilesets/tilesets/wooden_house_walls_tileset.png" id="1_7lai2"]
-[ext_resource type="Texture2D" uid="uid://ct1nolalcxm0c" path="res://assets/game/objects/basic_furniture.png" id="2_3s3rk"]
+[ext_resource type="TileSet" uid="uid://c8pt53o65xkq7" path="res://Tilesets/Tilesets (2)/house_tile_set.tres" id="1_gx538"]
+[ext_resource type="Texture2D" uid="uid://b4kvbe11qywoc" path="res://Tilesets/tilesets/wooden_house_walls_tileset.png" id="2_gdqfa"]
+[ext_resource type="Texture2D" uid="uid://ct1nolalcxm0c" path="res://assets/game/objects/basic_furniture.png" id="3_vvjy2"]
+[ext_resource type="PackedScene" uid="uid://du187gjudnw7n" path="res://scenes/houses/doors.tscn" id="4_elxo5"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3s3rk"]
-texture = ExtResource("1_7lai2")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cdomu"]
+texture = ExtResource("2_gdqfa")
 1:1/0 = 0
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -33,8 +35,8 @@ texture = ExtResource("1_7lai2")
 3:2/0 = 0
 3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pwu4a"]
-texture = ExtResource("2_3s3rk")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rg8an"]
+texture = ExtResource("3_vvjy2")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -2, -7, 5, 8, 5, 8, -2)
 1:0/0 = 0
@@ -102,7 +104,27 @@ texture = ExtResource("2_3s3rk")
 1:5/0 = 0
 2:5/0 = 0
 
-[resource]
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_yed7c"]
+scenes/1/scene = ExtResource("4_elxo5")
+
+[sub_resource type="TileSet" id="TileSet_pvcr7"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_3s3rk")
-sources/1 = SubResource("TileSetAtlasSource_pwu4a")
+sources/0 = SubResource("TileSetAtlasSource_cdomu")
+sources/1 = SubResource("TileSetAtlasSource_rg8an")
+sources/2 = SubResource("TileSetScenesCollectionSource_yed7c")
+
+[node name="MediumHouse" type="Node2D" unique_id=907114390]
+
+[node name="HouseTilemap" type="Node2D" parent="." unique_id=1135148137]
+
+[node name="Floor" type="TileMapLayer" parent="HouseTilemap" unique_id=396372045]
+tile_map_data = PackedByteArray("AAAAAP7/AAABAAEAAAABAP7/AAABAAEAAAACAP7/AAABAAEAAAAAAPr/AAABAAEAAAAAAPv/AAABAAEAAAAAAPz/AAABAAEAAAAAAP3/AAABAAEAAAABAP3/AAABAAEAAAABAPz/AAABAAEAAAABAPv/AAABAAEAAAACAPv/AAABAAEAAAACAPr/AAABAAEAAAADAPr/AAABAAEAAAAEAPr/AAABAAEAAAAFAPr/AAABAAEAAAABAPr/AAABAAEAAAACAP3/AAABAAEAAAADAP3/AAABAAEAAAAEAPz/AAABAAEAAAAEAPv/AAABAAEAAAADAPv/AAABAAEAAAADAPz/AAABAAEAAAACAPz/AAABAAEAAAADAP7/AAABAAEAAAAEAP7/AAABAAEAAAAEAP3/AAABAAEAAAAFAP3/AAABAAEAAAAFAPz/AAABAAEAAAAFAPv/AAABAAEAAAAFAP7/AAABAAEAAAA=")
+tile_set = ExtResource("1_gx538")
+
+[node name="Walls" type="TileMapLayer" parent="HouseTilemap" unique_id=1028677478]
+tile_map_data = PackedByteArray("AAD///v/AAAAAAEAAAD///z/AAAAAAEAAAD///3/AAAAAAEAAAD///7/AAAAAAIAAAAAAPn/AAABAAAAAAABAPn/AAABAAAAAAADAPn/AAADAAIAAAACAPn/AAADAAIAAAAEAPn/AAABAAAAAAAFAPn/AAABAAAAAAD///n/AAAAAAAAAAD///r/AAAAAAEAAAAGAPv/AAACAAEAAAAGAPz/AAACAAEAAAAGAP3/AAACAAEAAAAGAPr/AAACAAEAAAAGAPn/AAACAAAAAAAGAP7/AAACAAIAAAAFAP7/AAADAAIAAAAEAP7/AAABAAAAAAAAAP7/AAADAAIAAAADAP7/AAADAAIAAAACAP7/AAABAAAAAAADAPr/AAACAAEAAAADAPv/AAACAAEAAAABAP7/AgAAAAAAAQAEAPz/AQAHAAUAAAABAP3/AQAHAAUAAAA=")
+tile_set = SubResource("TileSet_pvcr7")
+
+[node name="Furniture" type="TileMapLayer" parent="HouseTilemap" unique_id=1048027984]
+tile_map_data = PackedByteArray("AAAFAPr/AQACAAEAAAAEAPr/AQADAAIAAAAFAPn/AQACAAAAAAAEAPn/AQAGAAMAAAAAAPr/AQABAAEAAAABAPr/AQADAAIAAAAAAPn/AQABAAAAAAABAPn/AQAGAAMAAAAEAP3/AQAEAAMAAAAFAP3/AQAFAAIAAAADAP3/AQAEAAIAAAADAPr/AQAFAAEAAAACAPr/AQAEAAEAAAA=")
+tile_set = ExtResource("1_gx538")
