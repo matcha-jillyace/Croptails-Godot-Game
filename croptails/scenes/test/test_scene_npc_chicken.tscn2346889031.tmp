@@ -45,6 +45,4 @@ position = Vector2(151, 226)
 navigation_polygon = SubResource("NavigationPolygon_6nbhr")
 
 [node name="Chicken" parent="Chickens" unique_id=1197320577 instance=ExtResource("2_a4sac")]
-position = Vector2(228, 174)
-min_walk_cycle = 2
-max_walk_cycle = 6
+position = Vector2(157, 142)

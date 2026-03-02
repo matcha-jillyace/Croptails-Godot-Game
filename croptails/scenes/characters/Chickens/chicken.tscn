@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b0nsvamrdibe2"]
 
 [ext_resource type="Texture2D" uid="uid://d0jwtogddjjjl" path="res://assets/game/characters/free_chicken_sprites.png" id="1_7mplu"]
+[ext_resource type="Script" uid="uid://cut3w0saylhny" path="res://scenes/characters/Chickens/chicken.gd" id="1_afd4h"]
 [ext_resource type="Script" uid="uid://cef8w8jp56xto" path="res://scripts/state_machine/node_state_machine.gd" id="2_wpvj0"]
 [ext_resource type="Script" uid="uid://b6bj140fnolch" path="res://scenes/characters/Chickens/idle_state.gd" id="3_kvaav"]
 [ext_resource type="Script" uid="uid://dme3y8w3ix2aj" path="res://scenes/characters/Chickens/walk_state.gd" id="4_kvaav"]
@@ -64,6 +65,9 @@ animations = [{
 radius = 4.1231055
 
 [node name="Chicken" type="CharacterBody2D" unique_id=1197320577]
+script = ExtResource("1_afd4h")
+min_walk_cycle = null
+max_walk_cycle = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1455580149]
 position = Vector2(0, -6)
@@ -76,6 +80,10 @@ frame_progress = 0.4930835
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_7mplu")
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1798831393]
+avoidance_enabled = true
+radius = 5.0
+
 [node name="StateMachine" type="Node" parent="." unique_id=1777390382 node_paths=PackedStringArray("initial_node_state")]
 script = ExtResource("2_wpvj0")
 initial_node_state = NodePath("Idle")
@@ -85,7 +93,8 @@ script = ExtResource("3_kvaav")
 character = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
-[node name="Walk" type="Node" parent="StateMachine" unique_id=1593583626 node_paths=PackedStringArray("character", "animated_sprite_2d")]
+[node name="Walk" type="Node" parent="StateMachine" unique_id=1593583626 node_paths=PackedStringArray("character", "animated_sprite_2d", "navigation_agent_2d")]
 script = ExtResource("4_kvaav")
 character = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+navigation_agent_2d = NodePath("../../NavigationAgent2D")

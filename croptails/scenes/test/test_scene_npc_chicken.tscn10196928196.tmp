@@ -48,3 +48,28 @@ navigation_polygon = SubResource("NavigationPolygon_6nbhr")
 position = Vector2(228, 174)
 min_walk_cycle = 2
 max_walk_cycle = 6
+
+[node name="Chicken2" parent="Chickens" unique_id=1759235884 instance=ExtResource("2_a4sac")]
+position = Vector2(223, 153)
+min_walk_cycle = 2
+max_walk_cycle = 6
+
+[node name="Chicken3" parent="Chickens" unique_id=894908780 instance=ExtResource("2_a4sac")]
+position = Vector2(253, 158)
+min_walk_cycle = 2
+max_walk_cycle = 6
+
+[node name="Chicken4" parent="Chickens" unique_id=1521377242 instance=ExtResource("2_a4sac")]
+position = Vector2(198, 165)
+min_walk_cycle = 2
+max_walk_cycle = 6
+
+[node name="Chicken5" parent="Chickens" unique_id=661371046 instance=ExtResource("2_a4sac")]
+position = Vector2(230, 210)
+min_walk_cycle = 2
+max_walk_cycle = 6
+
+[node name="Chicken6" parent="Chickens" unique_id=1625669365 instance=ExtResource("2_a4sac")]
+position = Vector2(203, 200)
+min_walk_cycle = 2
+max_walk_cycle = 6
